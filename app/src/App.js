@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Siderbar from './Components/Siderbar';
-import Resource from './Components/Resource';
+import Sidebar from './components/Sidebar';
+import Resource from './components/Resource';
 import {observer} from "mobx-react";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -17,7 +17,7 @@ class App extends Component {
 			<div className="App">
 				<t-header ref={(e) => { this.tHeader = e; }} logo-name="logoName" logo-url="http://pach.com" user-url="http://avatar.jpg" user-name="Sefi"></t-header>
 				<div className="flex-container">
-					<Siderbar />
+					<Sidebar />
 					<Resource />
 				</div>
 			</div>

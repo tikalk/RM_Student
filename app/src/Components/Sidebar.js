@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import '../App.css';
 
-class Siderbar extends Component {
+class Sidebar extends Component {
 	render() {
 		return (
 			<div className="sidebar">
@@ -15,4 +15,4 @@ class Siderbar extends Component {
 	}
 }
 
-export default Siderbar;
+export default Sidebar;
