@@ -11,7 +11,6 @@ services:
      - EXT_HOST_IP=192.168.1.73
     ports:
      - 3000:3000
-     - 9000:9000
   mongodbx:
     image: mongo:3.0.1
     container_name: "mongodb"
