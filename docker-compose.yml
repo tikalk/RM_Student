@@ -1,4 +1,4 @@
-version: '2.1'
+version: '0.1'
 services:
   app:
     image: local/student-app
@@ -21,9 +21,6 @@ services:
     environment:
      - EXT_HOST_IP=192.168.1.73
     depends_on:
-     - webdb
-  webdb:
-    image: local/student-db
-    container_name: student-db
-    build:
-      context: ./db
+     - mongo
+  mongo:
+    image: mongo:3.2
