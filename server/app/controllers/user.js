@@ -11,12 +11,24 @@ exports.getRoadmap = function (req, res) {
 /*
   Post /students/:studentId/roadmap/:roadmapId/feedback
     Request:
-        {feedback:  feedback}
+        {feedback:  String, rating: Number}
 */
-exports.postFeedback = function (req, res) {
+exports.postFeedback = function (req, res, next) {
     const githubUsername = req.params.studentId;
     const roadmapId = req.params.roadmapId;
-    User.update({githubUsername: githubUsername, });
+    User.update({
+        userId: githubUsername,
+        id: roadmapId
+    }, {
+        $set: {
+            feedback: req.body.feedback,
+            rating: req.body.rating
+        }
+    }, function (err) {
+        if (err) 
+            return handleError(err, next);
+        res.json({ success: true });
+    });
 };
 
 exports.getStudentsByRoadmap = function (req, res, next) {
