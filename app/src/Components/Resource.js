@@ -5,7 +5,7 @@ class Resource extends Component {
 	render() {
 		return (
 			<div className="resource">
-				<iframe></iframe>
+				<iframe title="resource"></iframe>
 			</div>
 		);
 	}

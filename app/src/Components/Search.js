@@ -5,7 +5,7 @@ class Search extends Component {
 	render() {
 		return (
 			<div className="search">
-				<iframe></iframe>
+				Search
 			</div>
 		);
 	}
