@@ -1,4 +1,4 @@
-version: '0.1'
+version: '1'
 services:
   app:
     image: local/student-app
@@ -6,21 +6,33 @@ services:
       context: ./app
     volumes:
      - .....
-    links:
+    links:mongodb
     environment:
      - EXT_HOST_IP=192.168.1.73
     depends_on:
      - server
+    ports:
+     - 3000:3000
+     - 9000:9000
   server:
     image: local/student-server
     build:
       context: ./server
     volumes:
      - ...
-    links:
+    links:mongodb
     environment:
      - EXT_HOST_IP=192.168.1.73
     depends_on:
-     - mongo
-  mongo:
-    image: mongo:3.2
+     - mongodb
+  mongodb:
+        image: mongo:latest
+        container_name: "mongodb"
+        environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+        volumes:
+          - ./data/db:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --smallfiles --logpath=/dev/null # --quiet
