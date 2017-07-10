@@ -1,8 +1,8 @@
 class Student {
 
-	public firstName;
-	public lastName;
-	public courses;
+	// public firstName;
+	// public lastName;
+	// public courses;
 
 	constructor({firstName, lastName, courses}) {
 		this.firstName = firstName;

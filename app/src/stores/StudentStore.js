@@ -17,4 +17,4 @@ class StudentStore {
 
 }
 
-export default StudentStore;
+export default new StudentStore();
