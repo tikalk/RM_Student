@@ -1,1 +1,29 @@
-
+version: '2.1'
+services:
+  app:
+    image: local/student-app
+    build:
+      context: ./app
+    volumes:
+     - .....
+    links:
+    environment:
+     - EXT_HOST_IP=192.168.1.73
+    depends_on:
+     - server
+  server:
+    image: local/student-server
+    build:
+      context: ./server
+    volumes:
+     - ...
+    links:
+    environment:
+     - EXT_HOST_IP=192.168.1.73
+    depends_on:
+     - webdb
+  webdb:
+    image: local/student-db
+    container_name: student-db
+    build:
+      context: ./db
