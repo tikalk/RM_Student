@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import Header from './components/Header';
 import Siderbar from './components/Siderbar';
 import Resource from './components/Resource';
-import StudentStore from "./stores/StudentStore";
 import {observer} from "mobx-react";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -17,7 +15,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header isOpen={StudentStore.fullName} />
+				<div className="header"></div>
 				<div className="flex-container">
 					<Siderbar />
 					<Resource />

@@ -7,8 +7,8 @@ class Siderbar extends Component {
 		return (
 			<div className="sidebar">
 				<ListGroup>
-					<ListGroupItem href="#" tag="a">Search Roadmap <i class="icon-people" /></ListGroupItem>
-					<ListGroupItem href="#" tag="a">My Roadmaps <i class="icon-people" /></ListGroupItem>
+					<ListGroupItem href="#" tag="a">Search Roadmap <i className="icon-people" /></ListGroupItem>
+					<ListGroupItem href="#" tag="a">My Roadmaps <i className="icon-people" /></ListGroupItem>
 				</ListGroup>
 			</div>
 		);
