@@ -23,16 +23,16 @@ services:
     volumes:
       - ./:/usr/src/app
     links:
-     - mongodb
+     - mongodbx
     environment:
      - EXT_HOST_IP=192.168.1.73
     depends_on:
-     - mongodb
+     - mongodbx
     ports:
      - 3000:3000
      - 9000:9000
     command: sh -c 'npm install; npm install -g nodemon ; nodemon -e js,jade app.js'
-  mongodb:
+  mongodbx:
     image: mongo:3.2
     container_name: "mongodb"
     environment:

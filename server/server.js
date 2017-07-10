@@ -57,6 +57,6 @@ function listen () {
 
 function connect () {
   var options = { server: { socketOptions: { keepAlive: 1 } } };
-  var connection = mongoose.connect("http://mongodb", options).connection;
+  var connection = mongoose.connect("mongodb://mongodbx", options).connection;
   return connection;
 }
