@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Sidebar from './components/Sidebar';
-import Resource from './components/Resource';
 import {observer} from "mobx-react";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -11,19 +10,19 @@ useStrict(true);
 
 @observer
 class App extends Component {
-
+	
 	render() {
 		return (
 			<div className="App">
-				<t-header ref={(e) => { this.tHeader = e; }} logo-name="logoName" logo-url="http://pach.com" user-url="http://avatar.jpg" user-name="Sefi"></t-header>
+				<t-header ref={(e) => {this.tHeader = e;}} logo-name="logoName" logo-url="http://pach.com" user-url="http://avatar.jpg" user-name="Sefi" />
 				<div className="flex-container">
 					<Sidebar />
-					<Resource />
+					{ this.props.children }
 				</div>
 			</div>
 		);
 	}
-
+	
 	componentDidMount() {
 		this.tHeader.messages = [
 			{
