@@ -14,8 +14,7 @@ services:
     depends_on:
      - server
     ports:
-     - 3000:3000
-     - 9000:9000
+     - 8443:8080
   server:
     image: local/student-server
     container_name: "student-server"
@@ -29,6 +28,9 @@ services:
      - EXT_HOST_IP=192.168.1.73
     depends_on:
      - mongodb
+    ports:
+     - 3000:3000
+     - 9000:9000
   mongodb:
     image: mongo:latest
     container_name: "mongodb"
