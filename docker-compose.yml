@@ -7,7 +7,8 @@ services:
       context: ./app
     volumes:
      - .....
-    links:mongodb
+    links:
+     - mongodb
     environment:
      - EXT_HOST_IP=192.168.1.73
     depends_on:
@@ -22,7 +23,8 @@ services:
       context: ./server
     volumes:
      - ...
-    links:mongodb
+    links:
+     - mongodb
     environment:
      - EXT_HOST_IP=192.168.1.73
     depends_on:
