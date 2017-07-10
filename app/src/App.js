@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Sidebar from './components/Sidebar';
+import Sidebar from './Components/Sidebar';
 import {observer} from "mobx-react";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
