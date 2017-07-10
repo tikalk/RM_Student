@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {useStrict} from "../node_modules/mobx/lib/mobx";
+
+useStrict(true);
 
 class App extends Component {
+
 	render() {
 		return (
 			<div className="App">
